@@ -3,7 +3,7 @@
  */
 'use strict;';
 //Include crypto to generate the movie id
-var crypto = require('crypto');
+const crypto = require('crypto');
 module.exports = function () {
     return {
         userList: [],
@@ -42,7 +42,7 @@ module.exports = function () {
          * Delete a movie with the given id.
          */
         remove: function (id) {
-            var found = 0;
+            let found = 0;
             this.userList = this.userList.filter(function (element) {
                 if (element.id === id) {
                     found = 1;
@@ -57,7 +57,7 @@ module.exports = function () {
          * Update a movie with the given id
          */
         update: function (id, user) {
-            var userIndex = this.userList.findIndex(function (element) {
+            const userIndex = this.userList.findIndex(function (element) {
                 return element.id === id;
             });
             if (userIndex !== -1) {
